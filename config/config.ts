@@ -62,12 +62,6 @@ if (isAntDesignProPreview) {
       code: 'UA-72788897-6',
     },
   ]);
-  plugins.push([
-    'umi-plugin-pro',
-    {
-      serverUrl: 'https://ant-design-pro.netlify.com',
-    },
-  ]);
 }
 
 export default {
@@ -369,7 +363,7 @@ export default {
         resourcePath: string;
       },
       _: string,
-      localName: string
+      localName: string,
     ) => {
       if (
         context.resourcePath.includes('node_modules') ||

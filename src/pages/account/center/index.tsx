@@ -64,10 +64,7 @@ interface CenterState {
     currentUserLoading: loading.effects['accountAndcenter/fetchCurrent'],
   }),
 )
-class Center extends PureComponent<
-  CenterProps,
-  CenterState
-> {
+class Center extends PureComponent<CenterProps, CenterState> {
   // static getDerivedStateFromProps(
   //   props: accountAndcenterProps,
   //   state: accountAndcenterState,
@@ -162,7 +159,7 @@ class Center extends PureComponent<
         <Row gutter={24}>
           <Col lg={7} md={24}>
             <Card bordered={false} style={{ marginBottom: 24 }} loading={dataLoading}>
-              {!dataLoading && (
+              {!dataLoading ? (
                 <div>
                   <div className={styles.avatarHolder}>
                     <img alt="" src={currentUser.avatar} />
@@ -227,7 +224,7 @@ class Center extends PureComponent<
                     </Row>
                   </div>
                 </div>
-              )}
+              ) : null}
             </Card>
           </Col>
           <Col lg={17} md={24}>

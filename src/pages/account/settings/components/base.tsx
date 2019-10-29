@@ -24,7 +24,10 @@ const AvatarView = ({ avatar }: { avatar: string }) => (
     <Upload fileList={[]}>
       <div className={styles.button_view}>
         <Button icon="upload">
-          <FormattedMessage id="accountandsettings.basic.change-avatar" defaultMessage="Change avatar" />
+          <FormattedMessage
+            id="accountandsettings.basic.change-avatar"
+            defaultMessage="Change avatar"
+          />
         </Button>
       </div>
     </Upload>
@@ -153,7 +156,9 @@ class BaseView extends Component<BaseViewProps> {
                 ],
               })(
                 <Input.TextArea
-                  placeholder={formatMessage({ id: 'accountandsettings.basic.profile-placeholder' })}
+                  placeholder={formatMessage({
+                    id: 'accountandsettings.basic.profile-placeholder',
+                  })}
                   rows={4}
                 />,
               )}
@@ -177,7 +182,10 @@ class BaseView extends Component<BaseViewProps> {
                 rules: [
                   {
                     required: true,
-                    message: formatMessage({ id: 'accountandsettings.basic.geographic-message' }, {}),
+                    message: formatMessage(
+                      { id: 'accountandsettings.basic.geographic-message' },
+                      {},
+                    ),
                   },
                   {
                     validator: validatorGeographic,
@@ -207,7 +215,10 @@ class BaseView extends Component<BaseViewProps> {
               })(<PhoneView />)}
             </FormItem>
             <Button type="primary" onClick={this.handlerSubmit}>
-              <FormattedMessage id="accountandsettings.basic.update" defaultMessage="Update Information" />
+              <FormattedMessage
+                id="accountandsettings.basic.update"
+                defaultMessage="Update Information"
+              />
             </Button>
           </Form>
         </div>

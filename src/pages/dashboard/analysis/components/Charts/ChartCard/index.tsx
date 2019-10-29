@@ -7,7 +7,7 @@ import styles from './index.less';
 type totalType = () => React.ReactNode;
 
 const renderTotal = (total?: number | totalType | React.ReactNode) => {
-  if (!total && total !== 0) {
+  if (!total) {
     return null;
   }
   let totalDom;

@@ -45,10 +45,7 @@ export interface FormDataType {
     submitting: loading.effects['userAndlogin/login'],
   }),
 )
-class Login extends Component<
-  LoginProps,
-  LoginState
-> {
+class Login extends Component<LoginProps, LoginState> {
   loginForm: FormComponentProps['form'] | undefined | null = undefined;
 
   state: LoginState = {
@@ -118,7 +115,10 @@ class Login extends Component<
             this.loginForm = form;
           }}
         >
-          <Tab key="account" tab={formatMessage({ id: 'userandlogin.login.tab-login-credentials' })}>
+          <Tab
+            key="account"
+            tab={formatMessage({ id: 'userandlogin.login.tab-login-credentials' })}
+          >
             {status === 'error' &&
               loginType === 'account' &&
               !submitting &&

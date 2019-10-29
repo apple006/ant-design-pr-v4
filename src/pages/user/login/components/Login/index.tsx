@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { FormComponentProps } from 'antd/es/form';
 import classNames from 'classnames';
 import LoginContext, { LoginContextProps } from './LoginContext';
-import LoginItem, { LoginItemProps, LoginItemType } from './LoginItem';
+import LoginItem, { LoginItemProps } from './LoginItem';
 
 import LoginSubmit from './LoginSubmit';
 import LoginTab from './LoginTab';
@@ -16,7 +16,7 @@ export interface LoginProps {
   onSubmit?: (error: any, values: any) => void;
   className?: string;
   form: FormComponentProps['form'];
-  children: React.ReactElement<typeof LoginTab>[];
+  children: React.ReactElement<LoginTab>[];
 }
 
 interface LoginState {
@@ -116,18 +116,21 @@ class Login extends Component<LoginProps, LoginState> {
   render() {
     const { className, children } = this.props;
     const { type, tabs = [] } = this.state;
-    const TabChildren: any[] = [];
-    const otherChildren: any[] = [];
-    React.Children.forEach(children, (child: any) => {
-      if (!child) {
-        return;
-      }
-      if (child.type.typeName === 'LoginTab') {
-        TabChildren.push(child);
-      } else {
-        otherChildren.push(child);
-      }
-    });
+    const TabChildren: React.ReactComponentElement<LoginTab>[] = [];
+    const otherChildren: React.ReactElement<any>[] = [];
+    React.Children.forEach(
+      children,
+      (child: React.ReactComponentElement<LoginTab> | React.ReactElement<any>) => {
+        if (!child) {
+          return;
+        }
+        if (child.type.typeName === 'LoginTab') {
+          TabChildren.push(child);
+        } else {
+          otherChildren.push(child);
+        }
+      },
+    );
     return (
       <LoginContext.Provider value={this.getContext()}>
         <div className={classNames(className, styles.login)}>

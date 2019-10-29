@@ -59,10 +59,7 @@ interface BasicListState {
     loading: loading.models.listAndbasicList,
   }),
 )
-class BasicList extends Component<
-  BasicListProps,
-  BasicListState
-> {
+class BasicList extends Component<BasicListProps, BasicListState> {
   state: BasicListState = { visible: false, done: false, current: undefined };
 
   formLayout = {

@@ -65,10 +65,7 @@ interface BasicState {
     loading: loading.effects['profileAndbasic/fetchBasic'],
   }),
 )
-class Basic extends Component<
-  BasicProps,
-  BasicState
-> {
+class Basic extends Component<BasicProps, BasicState> {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch({

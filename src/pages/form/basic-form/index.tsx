@@ -71,7 +71,10 @@ class BasicForm extends Component<BasicFormProps> {
       <PageHeaderWrapper content={<FormattedMessage id="formandbasic-form.basic.description" />}>
         <Card bordered={false}>
           <Form onSubmit={this.handleSubmit} hideRequiredMark style={{ marginTop: 8 }}>
-            <FormItem {...formItemLayout} label={<FormattedMessage id="formandbasic-form.title.label" />}>
+            <FormItem
+              {...formItemLayout}
+              label={<FormattedMessage id="formandbasic-form.title.label" />}
+            >
               {getFieldDecorator('title', {
                 rules: [
                   {
@@ -79,9 +82,16 @@ class BasicForm extends Component<BasicFormProps> {
                     message: formatMessage({ id: 'formandbasic-form.title.required' }),
                   },
                 ],
-              })(<Input placeholder={formatMessage({ id: 'formandbasic-form.title.placeholder' })} />)}
+              })(
+                <Input
+                  placeholder={formatMessage({ id: 'formandbasic-form.title.placeholder' })}
+                />,
+              )}
             </FormItem>
-            <FormItem {...formItemLayout} label={<FormattedMessage id="formandbasic-form.date.label" />}>
+            <FormItem
+              {...formItemLayout}
+              label={<FormattedMessage id="formandbasic-form.date.label" />}
+            >
               {getFieldDecorator('date', {
                 rules: [
                   {
@@ -99,7 +109,10 @@ class BasicForm extends Component<BasicFormProps> {
                 />,
               )}
             </FormItem>
-            <FormItem {...formItemLayout} label={<FormattedMessage id="formandbasic-form.goal.label" />}>
+            <FormItem
+              {...formItemLayout}
+              label={<FormattedMessage id="formandbasic-form.goal.label" />}
+            >
               {getFieldDecorator('goal', {
                 rules: [
                   {
@@ -149,7 +162,9 @@ class BasicForm extends Component<BasicFormProps> {
               }
             >
               {getFieldDecorator('client')(
-                <Input placeholder={formatMessage({ id: 'formandbasic-form.client.placeholder' })} />,
+                <Input
+                  placeholder={formatMessage({ id: 'formandbasic-form.client.placeholder' })}
+                />,
               )}
             </FormItem>
             <FormItem
@@ -164,7 +179,9 @@ class BasicForm extends Component<BasicFormProps> {
               }
             >
               {getFieldDecorator('invites')(
-                <Input placeholder={formatMessage({ id: 'formandbasic-form.invites.placeholder' })} />,
+                <Input
+                  placeholder={formatMessage({ id: 'formandbasic-form.invites.placeholder' })}
+                />,
               )}
             </FormItem>
             <FormItem
@@ -212,7 +229,9 @@ class BasicForm extends Component<BasicFormProps> {
                   {getFieldDecorator('publicUsers')(
                     <Select
                       mode="multiple"
-                      placeholder={formatMessage({ id: 'formandbasic-form.publicUsers.placeholder' })}
+                      placeholder={formatMessage({
+                        id: 'formandbasic-form.publicUsers.placeholder',
+                      })}
                       style={{
                         margin: '8px 0',
                         display: getFieldValue('public') === '2' ? 'block' : 'none',

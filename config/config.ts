@@ -306,26 +306,6 @@ export default {
               ],
             },
             {
-              name: 'demo',
-              icon: 'demo',
-              path: '/demo',
-              routes: [
-                {
-                  name: 'input',
-                  icon: 'input',
-                  path: '/demo/input',
-                  component: './demo/input',
-                },
-                {
-                  name: 'tabs',
-                  icon: 'tabs',
-                  path: '/demo/tabs',
-                  component: './demo/tabs',
-                },
-              ],
-            },
-
-            {
               name: 'editor',
               icon: 'highlight',
               path: '/editor',

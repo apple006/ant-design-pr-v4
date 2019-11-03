@@ -146,6 +146,7 @@ class Login extends Component<LoginProps, LoginState> {
               ]}
               onPressEnter={e => {
                 e.preventDefault();
+                // @ts-ignore
                 this.loginForm.validateFields(this.handleSubmit);
               }}
             />

@@ -58,7 +58,6 @@ const Model: ModelType = {
             return;
           }
         }
-        console.log(routerRedux.replace(redirect || '/'));
         yield put(routerRedux.replace(redirect || '/'));
       }
     },

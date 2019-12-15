@@ -10,7 +10,7 @@ class Index extends Component {
     checkAll: false,
   };
 
-  checkAll = e => {
+  checkAll = (e: any) => {
     if (e.currentTarget.checked) {
       this.setState({
         values: ['1', '2', '3'],
@@ -25,11 +25,12 @@ class Index extends Component {
     }
   };
 
-  check = e => {
+  check = (e: any) => {
     const { values } = this.state;
     const targetValue = e.currentTarget.value;
     const newValues = values.filter(item => item !== targetValue);
     if (e.currentTarget.checked) {
+      // @ts-ignore
       newValues.push(targetValue);
     }
     this.setState({

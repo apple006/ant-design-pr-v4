@@ -5,11 +5,11 @@ import moment from 'moment';
 
 const { WeekPicker, MonthPicker, RangePicker } = DatePicker;
 
-function disabledDate(current) {
+function disabledDate(current: any) {
   return current && current < moment().endOf('day');
 }
 
-function disabledTime(current, type) {
+function disabledTime(current: any, type: string) {
   console.log(current, type);
   if (type === 'start') {
     return {

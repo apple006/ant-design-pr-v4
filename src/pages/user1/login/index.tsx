@@ -5,6 +5,7 @@ import { Tabs, Form, Input, Icon, Button, Checkbox, Alert } from 'antd';
 import styles from './style.less';
 import { uuid } from '@/utils/utils';
 import { connect } from 'dva';
+import { FormComponentProps } from 'antd/es/form';
 
 const captchaBaseUrl = 'http://localhost:9000/common/captcha/image';
 
@@ -14,7 +15,7 @@ const FormItem = Form.Item;
   login1,
   submitting: loading.effects['login1/login'],
 }))
-class Index extends Component {
+class Index extends Component<FormComponentProps> {
   state = {
     captchaUrl: '',
     captchaId: '',
